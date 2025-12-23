@@ -1,2 +1,0 @@
-# odyva-landing-page
-
