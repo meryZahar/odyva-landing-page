@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-caveat: 'Caveat', cursive;
+  --font-epilogue: 'Epilogue', sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f9f9f9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  font-family: var(--font-epilogue), system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #E1D7F3 0%, #F9F9F9 100%);
+  position: relative;
+}
+
+/* Organic grain/mist texture overlay - cardboard/paper effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Odyva Radix Themes Typography Overrides */
+.radix-themes {
+  /* Font families */
+  --default-font-family: 'Epilogue', sans-serif;
+  --heading-font-family: 'Caveat', cursive;
+
+  /* Scaling factors */
+  --scaling-desktop: 1.0;
+  --scaling-tablet: 0.89;
+  /* 16/18 */
+  --scaling-mobile: 0.78;
+  /* 14/18 */
+
+  /* Font sizes (base: 18px for desktop, 16px for tablet, 14px for mobile) */
+  --font-size-1: calc(12px * var(--scaling, 1.0));
+  --font-size-2: calc(14px * var(--scaling, 1.0));
+  --font-size-3: calc(18px * var(--scaling, 1.0));
+  /* body */
+  --font-size-4: calc(24px * var(--scaling, 1.0));
+  --font-size-5: calc(28px * var(--scaling, 1.0));
+  --font-size-6: calc(32px * var(--scaling, 1.0));
+  --font-size-7: calc(40px * var(--scaling, 1.0));
+  /* h2 */
+  --font-size-8: calc(48px * var(--scaling, 1.0));
+  --font-size-9: calc(64px * var(--scaling, 1.0));
+  /* h1 */
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Line heights */
+  --line-height-1: calc(16px * var(--scaling, 1.0));
+  --line-height-2: calc(20px * var(--scaling, 1.0));
+  --line-height-3: calc(28.8px * var(--scaling, 1.0));
+  /* body */
+  --line-height-4: calc(32px * var(--scaling, 1.0));
+  --line-height-5: calc(36px * var(--scaling, 1.0));
+  --line-height-6: calc(40px * var(--scaling, 1.0));
+  --line-height-7: calc(48px * var(--scaling, 1.0));
+  /* h2 */
+  --line-height-8: calc(56px * var(--scaling, 1.0));
+  --line-height-9: calc(61.6px * var(--scaling, 1.0));
+  /* h1 */
+
+  /* Letter spacing */
+  --letter-spacing-1: 0em;
+  --letter-spacing-2: 0em;
+  --letter-spacing-3: 0em;
+  --letter-spacing-4: 0em;
+  --letter-spacing-5: 0em;
+  --letter-spacing-6: 0em;
+  --letter-spacing-7: 0em;
+  --letter-spacing-8: -0.5px;
+  /* h1 */
+  --letter-spacing-9: 0em;
+
+  /* Default values */
+  --default-font-size: var(--font-size-3);
+  --default-font-weight: var(--font-weight-light);
+  --default-line-height: var(--line-height-3);
+  --default-letter-spacing: 0em;
+
+  /* Heading */
+  --heading-font-size-adjust: 1;
+  --heading-font-style: normal;
+  --heading-leading-trim-start: 0.42em;
+  --heading-leading-trim-end: 0.36em;
+  --heading-letter-spacing: 0em;
+  --heading-line-height-7: var(--line-height-7);
+  --heading-line-height-8: var(--line-height-8);
+  --heading-line-height-9: var(--line-height-9);
+}
+
+@media (max-width: 1023px) {
+  .radix-themes {
+    --scaling: 0.89;
+  }
+}
+
+@media (max-width: 767px) {
+  .radix-themes {
+    --scaling: 0.78;
+  }
+}
+
+/* Odyva Texture Utilities */
+/* Organic grain textures for premium cardboard/paper feel */
+
+.texture-grain {
+  position: relative;
+}
+
+.texture-grain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.12'/%3E%3C/svg%3E");
+  opacity: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.texture-grain>* {
+  position: relative;
+  z-index: 2;
+}
+
+.texture-paper {
+  position: relative;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='2' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.06'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+}
+
+/* Odyva Section Separators */
+/* Elegant dividers between page sections */
+
+.section-separator {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.section-separator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #E1D7F3 20%, #B79BD4 50%, #E1D7F3 80%, transparent 100%);
+  opacity: 0.6;
+}
+
+/* Decorative separator with center ornament */
+.section-separator-ornament {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.section-separator-ornament::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #E1D7F3 30%, #B79BD4 50%, #E1D7F3 70%, transparent 100%);
+  opacity: 0.5;
+}
+
+.section-separator-ornament::after {
+  content: '✦';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #B79BD4;
+  font-size: 16px;
+  opacity: 0.4;
+}
+
+/* Odyva Custom Scrollbar */
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9F9F9;
+  border-radius: 10px;
+  border: 1px solid #E1D7F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #B79BD4 0%, #A68DCE 100%);
+  border-radius: 10px;
+  border: 2px solid #F9F9F9;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #A68DCE 0%, #55286F 100%);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #55286F;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #B79BD4 #F9F9F9;
+}
+
+/* Odyva Dropdown Menu Enhancements */
+/* Radix UI Dropdown Menu Items */
+[data-radix-collection-item] {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+[data-radix-collection-item]:hover {
+  background: linear-gradient(90deg, rgba(225, 215, 243, 0.4) 0%, rgba(230, 197, 185, 0.2) 100%) !important;
+  transform: translateX(2px);
+}
+
+[data-radix-collection-item]:active {
+  transform: translateX(0px) scale(0.98);
+}
+
+/* Enhanced focus states for accessibility */
+[data-radix-collection-item]:focus-visible {
+  outline: 2px solid #B79BD4;
+  outline-offset: -2px;
+  background: linear-gradient(90deg, rgba(225, 215, 243, 0.5) 0%, rgba(230, 197, 185, 0.3) 100%) !important;
+}
+
+/* Dropdown Content Animation */
+@keyframes dropdown-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-state="open"] {
+  animation: dropdown-fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

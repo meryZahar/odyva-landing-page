@@ -1,0 +1,86 @@
+.categoryCard {
+  width: 240px;
+  flex: 0 0 auto;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F9F9F9 50%, #E1D7F3 100%);
+  border-radius: 8px 30px 8px 30px;
+  border: 1px solid rgba(166, 141, 206, 0.4);
+  box-shadow: 0 4px 12px rgba(85, 40, 111, 0.08), 0 2px 6px rgba(183, 155, 212, 0.06), 0 0 0 1px rgba(166, 141, 206, 0.1);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.cardContainer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(85, 40, 111, 0.15), 0 8px 24px rgba(183, 155, 212, 0.1), 0 0 0 1px rgba(230, 197, 185, 0.3);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-4);
+  cursor: pointer;
+  border-radius: 8px 30px 8px 30px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(249, 249, 249, 0) 100%);
+}
+
+.categoryImage {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 30px 8px 30px;
+  transition: transform 0.4s ease;
+}
+
+.cardContainer:hover .categoryImage {
+  transform: scale(1.05);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(225, 215, 243, 0.3) 0%, rgba(225, 215, 243, 0.7) 100%);
+}
+
+.categoryName {
+  margin: 0;
+  color: #55286F;
+  font-family: 'Epilogue';
+  font-weight: 500;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(85, 40, 111, 0.1);
+}
+
+.iconButton {
+  background: #F9F9F9;
+  color: #55286F;
+  border-radius: 50%;
+  border: 1px solid rgba(166, 141, 206, 0.3);
+  box-shadow: 0 2px 6px rgba(85, 40, 111, 0.08);
+  padding: 8px;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.iconButton:hover {
+  background: linear-gradient(135deg, #55286F 0%, #B79BD4 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(85, 40, 111, 0.3);
+}
